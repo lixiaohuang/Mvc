@@ -13,7 +13,7 @@ namespace TagHelpersWebSite
         // Set up application services
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc(options => options.EnableGlobalRouting = true);
         }
 
         public void Configure(IApplicationBuilder app)

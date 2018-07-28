@@ -20,7 +20,7 @@ using Xunit;
 
 namespace Microsoft.AspNetCore.Mvc.Routing
 {
-    public class ActionConstraintEndpointSelectorTest
+    public class ActionConstraintMatcherPolicyTest
     {
         [Fact]
         public void Apply_CanBeAmbiguous()

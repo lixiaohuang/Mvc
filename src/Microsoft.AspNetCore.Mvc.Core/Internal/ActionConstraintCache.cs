@@ -207,7 +207,7 @@ namespace Microsoft.AspNetCore.Mvc.Internal
             }
         }
 
-        internal struct CacheEntry
+        internal readonly struct CacheEntry
         {
             public CacheEntry(IReadOnlyList<IActionConstraint> actionConstraints)
             {

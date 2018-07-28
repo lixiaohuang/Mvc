@@ -336,13 +336,13 @@ namespace Microsoft.AspNetCore.Mvc.Internal
                 // action constraints.
                 foreach (var actionConstraint in action.ActionConstraints)
                 {
-                    if (actionConstraint is HttpMethodActionConstraint httpMethodActionConstraint && 
-                        !metadata.Contains(actionConstraint))
+                    if (actionConstraint is HttpMethodActionConstraint httpMethodActionConstraint)
                     {
                         metadata.Add(new HttpMethodMetadata(httpMethodActionConstraint.HttpMethods));
                     }
                     else if (!metadata.Contains(actionConstraint))
                     {
+                        // The constraint might have been added earlier, e.g. it is also a filter descriptor
                         metadata.Add(actionConstraint);
                     }
                 }
